@@ -1,0 +1,86 @@
+
+
+Allocate buffer:
+	Tag: 0x00040001
+	Request:
+		Length: 4
+		Value:
+		u32: alignment in bytes
+	Response:
+		Length: 8
+		Value:
+		u32: frame buffer base address in bytes
+		u32: frame buffer size in bytes
+		
+Physical (display) width/height:
+	Tag: 0x00048003	
+	Request:
+		Length: 8
+		Value:
+		u32: width in pixels
+		u32: height in pixels
+	Response:
+		Length: 8
+		Value:
+		u32: width in pixels
+		u32: height in pixels
+		
+	
+Virtual (buffer) width/height:
+	Tag: 0x00048004
+	Request:
+		Length: 8
+		Value:
+		u32: width in pixels
+		u32: height in pixels
+	Response:
+		Length: 8
+		Value:
+		u32: width in pixels
+		u32: height in pixels
+	
+Virtual (buffer) offset: 
+	Tag: 0x00048009
+	Request:
+		Length: 8
+		Value:
+		u32: X in pixels
+		u32: Y in pixels
+	Response:
+		Length: 8
+		Value:
+		u32: X in pixels
+		u32: Y in pixels
+
+Depth: 
+	Tag: 0x00048005
+	Request:
+		Length: 4
+		Value:
+		u32: bits per pixel
+	Response:
+		Length: 4
+		Value:
+		u32: bits per pixel
+
+Pixel order: 
+	Tag: 0x00040006
+	Request:
+		Length: 0
+	Response:
+		Length: 4
+		Value:
+		u32: state
+		State:
+		0x0: BGR
+		0x1: RGB
+	
+Get pitch:
+	Tag: 0x00040008
+	Request:
+		Length: 0
+	Response:
+		Length: 4
+		Value:
+		u32: bytes per line
+
