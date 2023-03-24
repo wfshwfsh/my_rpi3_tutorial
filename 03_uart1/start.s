@@ -30,7 +30,7 @@ _start:
     ldr     x1, =_start
     mov     sp, x1
 
-    b main //fix issue: b main => will restart main after end of process ?
+    bl main //fix issue: b main => will restart main after end of process ?
 
     //should NOT enter here
 5:

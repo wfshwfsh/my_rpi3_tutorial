@@ -9,8 +9,8 @@ OBJS = $(SRCS:.c=.o)
 CFLAGS = -I. -Wall -O2 -ffreestanding -nostdinc -nostdlib -nostartfiles
 
 
-QEMU_DIR="`pwd`/../qemu_install/bin/"
-QEMU_CMD=$(QEMU_DIR)"qemu-system-aarch64"
+QEMU_DIR=$(PWD)/../qemu_install/bin/
+QEMU_CMD=$(QEMU_DIR)qemu-system-aarch64
 
 
 all: kernel8.img
