@@ -22,7 +22,7 @@ void set_framebuffer()
 	//1. Allocate buffer: 2-6
 	mbox[i++] = MBOX_TAG_ALLCT_BUFFER;
 	mbox[i++] = 8;//buffer_sz
-	mbox[i++] = 8;//data_sz
+	mbox[i++] = 4;//data_sz
 	mbox[i++] = 4096;//alignment
 	mbox[i++] = 0; //???
     
@@ -63,8 +63,8 @@ void set_framebuffer()
 	//7. Get pitch: 30-33
 	mbox[i++] = MBOX_TAG_GET_PITCH;
 	mbox[i++] = 4;//buffer_sz
-	mbox[i++] = 4;//data_sz
-	mbox[i++] = 0;//pitch
+	mbox[i++] = 0;//data_sz
+	mbox[i++] = 0;//pitch: bytes per line
     
 	mbox[i++] = END_TAG;
 	mbox[0] = 35*4;//total len = mbox_num * 4(bytes)
@@ -94,6 +94,8 @@ void set_framebuffer()
 
 void fb_init()
 {
+    for(int delay=10000000;delay>0;delay--) ;
+        
     set_framebuffer();
     
 }
@@ -102,7 +104,7 @@ void fb_splash() {
     int x, y;
     unsigned char *ptr = fb;
     
-#if 0    
+#if 0
     unsigned int white = 255 << 16 | 255 << 8 | 255;  // A B G R
     unsigned int black = 0;
     unsigned int current, start = black, spacing = 40;
