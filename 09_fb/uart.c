@@ -163,6 +163,8 @@ void puts(char *s)
     //uart0_putchar('\n');
 }
 
+
+
 void put_hex(unsigned int d)
 {
     int ascii_char_a = 97;

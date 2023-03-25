@@ -76,35 +76,3 @@ void set_sysclock()
 
 }
 
-void set_framebuffer
-{
-	int i=2;
-	
-	//1. Allocate buffer:
-	mbox[i++] = MBOX_TAG_ALLCT_BUFFER;
-	mbox[i++] = 
-	mbox[i++] = 
-	mbox[i++] = 
-	
-	//2. Physical (display) width/height:
-	
-	
-	//3. Virtual (buffer) width/height:
-	
-	
-	//4. Virtual (buffer) offset: 
-	
-	
-	//5. Depth: 
-	
-	
-	//6. Pixel order: 
-	
-	
-	//7. Get pitch:
-	
-	
-	
-	mbox[0] = total_len?;
-	mbox[1] = MAILBOX_REQUEST;
-}

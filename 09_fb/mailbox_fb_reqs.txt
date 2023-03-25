@@ -52,7 +52,7 @@ Virtual (buffer) offset:
 		u32: X in pixels
 		u32: Y in pixels
 
-Depth: 
+Set Depth: 
 	Tag: 0x00048005
 	Request:
 		Length: 4
@@ -63,14 +63,17 @@ Depth:
 		Value:
 		u32: bits per pixel
 
-Pixel order: 
-	Tag: 0x00040006
-	Request:
-		Length: 0
-	Response:
-		Length: 4
-		Value:
-		u32: state
+Set Pixel order: 
+    Tag: 0x00048006
+    Request:
+        Length: 4
+        Value:
+        u32: state (as above)
+    Response:
+        Length: 4
+        Value:
+        u32: state (as above)
+        
 		State:
 		0x0: BGR
 		0x1: RGB
